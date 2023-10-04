@@ -27,12 +27,16 @@
     <p style="color:#c57f23; font-size: 2vw;">Personalized movies based on Collaborative and Content-Based Filtering!</p> 
   </div>
 
-  <div>
   <div id="left">
-    <input class="center-block " type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for movies..">
-    <ul id="myUL" class="myUL" style="visibility: hidden;">
-    </ul>
+    <div class="search-container">
+      <input class="center-block" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for movies..">
+      <button id="clearButton" class="btn btn-secondary">Clear</button>
+    </div>
+    <ul id="myUL" class="myUL" style="visibility: hidden;"></ul>
   </div>
+  
+  
+  
 
 
   <div id="right">

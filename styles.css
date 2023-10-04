@@ -7,7 +7,7 @@
   padding: 2px 20px 12px 40px; /* Add some padding */
   border: 1px solid #ddd; /* Add a grey border */
   margin-bottom: 12px; /* Add some space below the input */
-  margin-top: 30px;
+  margin-top: 40px;
   text-align: left;
 }
 
@@ -49,9 +49,8 @@ font-size: 8vw;
   list-style-type: none;
   display: block;
   padding: 1px;
-  margin: auto;
-  z-index: 1;
-  width: 65%;
+  margin-left: 75px;
+  width: 70%;
   position: relative;
   z-index: 1;
 }
@@ -113,7 +112,20 @@ hr {
 .col.d-flex{
   width: 375px !important;
   min-width: 360px !important;
-  max-width: 400px !important;
+  max-width: 1000px !important;
+}
+
+/* Add CSS to style the search container */
+.search-container {
+  display: flex; /* Use flexbox to arrange items horizontally */
+  align-items: center; /* Center vertically within the container */
+}
+
+/* Style the clear button as needed */
+#clearButton {
+  margin-left: 1px; 
+  margin-right: 15px; 
+  margin-top: 27px;
 }
 
 #loader-container {
@@ -164,6 +176,15 @@ hr {
   .emoji{
     display: none;
     
+    }
+
+    .blink_me {
+      animation: blinker 2s linear infinite;
+      margin-top: 10px;
+      margin-left: -120px; /* Adjust this value to move the text to the left */
+      text-align: center;
+      font-size: 5vw;
+      color: #1e677c;;
     }
     
 }

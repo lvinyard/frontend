@@ -57,6 +57,18 @@ function myFunction() {
 
 }
 
+
+var input = document.getElementById("myInput");
+var clearButton = document.getElementById("clearButton");
+
+// Add a click event listener to the clear button
+clearButton.addEventListener("click", function() {
+  // Clear the input field
+  input.value = "";
+  // Call your search function (myFunction in this case) to reset the search results
+  myFunction();
+});
+
 function movieSelect(event) {
 
     var selectMovie = event.target.innerHTML;
