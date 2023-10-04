@@ -72,6 +72,7 @@ clearButton.addEventListener("click", function() {
 function movieSelect(event) {
 
     var selectMovie = event.target.innerHTML;
+    selectMovie = selectMovie.replace(/&amp;/g,'&');
     var url = "https://movierec.lukesnexus.com/" + selectMovie
     var movieList = document.getElementById("movieRecommendations");
 
