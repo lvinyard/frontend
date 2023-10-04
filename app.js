@@ -63,7 +63,7 @@ function movieSelect(event) {
     var url = "https://movierec.lukesnexus.com/" + selectMovie
     var movieList = document.getElementById("movieRecommendations");
 
-    document.getElementById('accordion').innerHTML = "";
+    document.getElementById('card-deck').innerHTML = "";
     myFunction()
 
     ul = document.getElementById("myUL");
@@ -99,43 +99,64 @@ function movieSelect(event) {
 
 function loadCards(data){
 
-  const container = document.getElementById('accordion');
+  const container = document.getElementById('card-deck');
+  let cardArray = [];
 
   data.forEach((result, idx) => {
     // Create card element
     const card = document.createElement('div');
     card.classList = 'card-body';
-  
-    // Construct card content
-    const content = `
-      <div class="card text-white bg-dark mb-3">
-      <div class="card-header" id="heading-${idx}">
-      <div id="cardleft">
-      <h3>${result.movieId}</h3>
-      </div>
-      <div id="cardright">
-      <img class="card-img-top" style="max-width: 120px;" src="https://image.tmdb.org/t/p/original/${result.metadata.poster_path}" alt="Card image cap">
-      </div>
-        <h5 class="mb-0">
-          <button class="btn btn-link" data-toggle="collapse" data-target="#collapse-${idx}" aria-expanded="true" aria-controls="collapse-${idx}">
-  
-                  </button>
-        </h5>
-      </div>
-  
-      <div id="collapse-${idx}" class="collapse show" aria-labelledby="heading-${idx}" data-parent="#accordion">
-        <div class="card-body">
-  
-          
-          <hr/>
-          <p>${result.metadata.overview}</p>
-        </div>
-      </div>
-    </div>
+
+    content = `
+    <div class="card">
+      <img class="card-img-top" src="https://image.tmdb.org/t/p/original/${result.metadata.poster_path}" alt="Card image">
+      <div class="card-body"">
+        <h4 class="card-title">${result.movieId}</h4>
+        <hr/>
+        <p class="card-text">${result.metadata.overview}</p>
+  </div>
+</div>
     `;
-  
-    // Append newyly created card element to the container
-    container.innerHTML += content;
+    // add contant to array
+    cardArray.push(content);
   })
+
+  const cardDeck = `
+  <div class="row">
+  <div class="col d-flex">
+    ${cardArray[0]}
+  </div>
+  <div class="col d-flex">
+  ${cardArray[1]}
+  </div>
+  <div class="col d-flex">
+  ${cardArray[2]}
+  </div>
+</div>
+<div class="row">
+  <div class="col d-flex">
+  ${cardArray[3]}
+  </div>
+  <div class="col d-flex">
+  ${cardArray[4]}
+  </div>
+  <div class="col d-flex">
+  ${cardArray[5]}
+  </div>
+</div>
+<div class="row">
+  <div class="col d-flex">
+  ${cardArray[6]}
+  </div>
+  <div class="col d-flex">
+  ${cardArray[7]}
+  </div>
+  <div class="col d-flex">
+  ${cardArray[8]}
+  </div>
+</div>
+  `;
+
+  container.innerHTML += cardDeck;
 }
 

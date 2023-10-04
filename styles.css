@@ -11,7 +11,7 @@
 }
 
 #site {
-  background-color: #F5F5F5;
+  background-color: #e6e7d4;
 }
 
 .center-block {
@@ -20,6 +20,23 @@
   padding: 30px;
 }
 
+.header{
+  font-family: 'Amatic SC', sans-serif;
+  font-size: 5vw;
+}
+
+.bgHeader{
+  background-color: #3f5c64
+}
+
+.card-text {
+  font-size: calc(7px + .5vw);
+  color: white;
+}
+
+.card-img-top{
+  max-height: 400px;
+}
 
 #myUL {
   /* Remove default list styling */
@@ -53,20 +70,18 @@
 }
 
 .card {
-  padding: 1rem;
   border: 1px solid black;
-  margin: 1rem;
-  width: 30%;
-  background-color: #8DB48E;
+  background-color: #1e677c;
+  margin-bottom: 20px;
   }
 
 
 #left {
-    width: 40%;
+    width: 30%;
     float: left;
 }
 #right {
-    width: 60%;
+    width: 70%;
     float: left;
     margin-top: 85px;
 }
@@ -78,4 +93,11 @@
 #cardright {
   width: 50%;
   float: left;
+}
+
+hr {
+  height: 3px;
+  /* Set the hr color */
+  color: #c57f23;  /* old IE */
+  background-color: #c57f23;  /* Modern Browsers */
 }
