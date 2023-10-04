@@ -36,8 +36,8 @@ function myFunction() {
   
   if(filter.length == 0){
     ul.style["visibility"] = "hidden";
-    document.getElementById("movieRecommendations").innerHTML = "";
-
+    //document.getElementById("movieRecommendations").innerHTML = "";
+    document.getElementById("card-deck").innerHTML = "";
     console.log(filter.length);
   }
   else{
@@ -63,11 +63,15 @@ function movieSelect(event) {
     var url = "https://movierec.lukesnexus.com/" + selectMovie
     var movieList = document.getElementById("movieRecommendations");
 
-    document.getElementById('card-deck').innerHTML = "";
+
+    document.getElementById("card-deck").innerHTML = "";
     myFunction()
 
     ul = document.getElementById("myUL");
     ul.style.display = "none";
+
+    var loaders = document.getElementById("loader-container");
+    loaders.style.display = "";
 
     document.getElementById('myInput').value = selectMovie
     console.log("You selected " + selectMovie + ".");
@@ -88,7 +92,7 @@ function movieSelect(event) {
             movieList.appendChild(li);
         }
         */
-
+        loaders.style.display = "none";
     })
     .catch(error => {
         // handle the error
@@ -111,7 +115,7 @@ function loadCards(data){
     <div class="card">
       <img class="card-img-top" src="https://image.tmdb.org/t/p/original/${result.metadata.poster_path}" alt="Card image">
       <div class="card-body"">
-        <h4 class="card-title">${result.movieId}</h4>
+        <h4 class="card-title" style="color: white;">${result.movieId}</h4>
         <hr/>
         <p class="card-text">${result.metadata.overview}</p>
   </div>
@@ -132,8 +136,8 @@ function loadCards(data){
   <div class="col d-flex">
   ${cardArray[2]}
   </div>
-</div>
-<div class="row">
+<!--</div>
+<div class="row"> -->
   <div class="col d-flex">
   ${cardArray[3]}
   </div>
@@ -143,8 +147,8 @@ function loadCards(data){
   <div class="col d-flex">
   ${cardArray[5]}
   </div>
-</div>
-<div class="row">
+<!-- </div>
+<div class="row"> -->
   <div class="col d-flex">
   ${cardArray[6]}
   </div>

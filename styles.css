@@ -1,13 +1,14 @@
 #myInput {
   background-repeat: no-repeat; /* Do not repeat the icon image */
   margin: auto;
-  width: 80%; /* Full-width */
-  border: 3px solid green;
+  width: 70%; /* Full-width */
+  border: 10px solid rgb(7, 7, 7);
   font-size: 16px; /* Increase font-size */
-  padding: 12px 20px 12px 40px; /* Add some padding */
+  padding: 2px 20px 12px 40px; /* Add some padding */
   border: 1px solid #ddd; /* Add a grey border */
   margin-bottom: 12px; /* Add some space below the input */
-  margin-top: 100px;
+  margin-top: 30px;
+  text-align: left;
 }
 
 #site {
@@ -23,6 +24,11 @@
 .header{
   font-family: 'Amatic SC', sans-serif;
   font-size: 5vw;
+}
+.emoji{
+font-family: 'Noto Color Emoji', sans-serif;
+font-size: 8vw;
+
 }
 
 .bgHeader{
@@ -45,7 +51,7 @@
   padding: 1px;
   margin: auto;
   z-index: 1;
-  width: 75%;
+  width: 65%;
   position: relative;
   z-index: 1;
 }
@@ -73,6 +79,7 @@
   border: 1px solid black;
   background-color: #1e677c;
   margin-bottom: 20px;
+  width: 150%;
   }
 
 
@@ -83,7 +90,7 @@
 #right {
     width: 70%;
     float: left;
-    margin-top: 85px;
+    margin-top: 30px;
 }
 
 #cardleft {
@@ -100,4 +107,64 @@ hr {
   /* Set the hr color */
   color: #c57f23;  /* old IE */
   background-color: #c57f23;  /* Modern Browsers */
+  border-color: #c57f23;
 }
+
+.col.d-flex{
+  width: 375px !important;
+  min-width: 360px !important;
+  max-width: 400px !important;
+}
+
+#loader-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #1e677c;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+.blink_me {
+  animation: blinker 2s linear infinite;
+  margin-top: 10px;
+  margin-left: -120px; /* Adjust this value to move the text to the left */
+  text-align: center;
+  font-size: 1vw;
+  color: #1e677c;;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #left{
+    width:100%;
+  }
+  #right{
+    width:100%;
+    margin: 0 auto;
+  }
+  .emoji{
+    display: none;
+    
+    }
+    
+}
+

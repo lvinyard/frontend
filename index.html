@@ -10,29 +10,42 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Noto+Color+Emoji&display=swap" rel="stylesheet">
 </head>
 
 
 
 <body id="site">
 
-  <div class="container-fluid p-5 bgHeader text-white text-center">
-    <h1 class="header">Welcome to my Movie Recommender Site!</h1>
-    <p style="color:#c57f23; font-size: 1.5vw;">Personalized movies based on Collaborative and Content-Based Filtering!</p> 
+  <div class="container-fluid p-1 bgHeader text-white text-center">
+    <!--<h1 class="header">Welcome to my Movie Recommender Site</h1>-->
+    <h1>
+      <span _ngcontent-ng-c215015321="" class="emoji" style="margin-right:.25em;">📽️</span>
+      <span class="header">Welcome to my Movie Recommender Site</span>
+      <span _ngcontent-ng-c215015321="" class="emoji" style="margin-left:.25em;">🎬</span>
+    </h1>
+    <p style="color:#c57f23; font-size: 2vw;">Personalized movies based on Collaborative and Content-Based Filtering!</p> 
   </div>
 
-<div>
+  <div>
   <div id="left">
-    <input class="center-block" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for movies..">
-    <ul id="myUL" class="myUL" style="visibility: hidden">
+    <input class="center-block " type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for movies..">
+    <ul id="myUL" class="myUL" style="visibility: hidden;">
     </ul>
   </div>
 
-  <div id="right">
 
-    <div class="container center-block" id = "card-deck">
-     
+  <div id="right">
+    <div style="display: none;" id="loader-container" class="center-block">
+      <div id="loader" class="loader"></div>
+      <div class="blink_me">Choosing the best movies for you...</div>
     </div>
+    <div class="container center-block" id="card-deck">
+      <!-- Your movie content goes here -->
+    </div>
+  </div>
+  
+
     
 </div>
 </div>
