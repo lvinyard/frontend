@@ -13,6 +13,8 @@
 
 #site {
   background-color: #e6e7d4;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .center-block {
@@ -90,6 +92,8 @@ font-size: 8vw;
     width: 70%;
     float: left;
     margin-top: 30px;
+    overflow-y: auto;
+    max-height: 100vh;
 }
 
 #cardleft {
