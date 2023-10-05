@@ -166,6 +166,9 @@ hr {
   margin-right: 0;
 }
 
+#buffer{
+  min-height: 15vw;
+}
 
 #loader-container {
   position: relative;
@@ -216,11 +219,13 @@ hr {
     width:100%;
     margin: 0 auto;
   }
+  #buffer{
+    min-height: 40vw;
+  }
 
     .blink_me {
       animation: blinker 2s linear infinite;
-      margin-top: 10px;
-      margin-left: -120px; /* Adjust this value to move the text to the left */
+      margin-top: 10px;/* Adjust this value to move the text to the left */
       text-align: center;
       font-size: 5vw;
       color: #1e677c;;
