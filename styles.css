@@ -51,10 +51,12 @@ font-size: 8vw;
   list-style-type: none;
   display: block;
   padding: 1px;
-  margin-left: 75px;
+  margin-left: 40px;
   width: 70%;
   position: relative;
   z-index: 1;
+  align-items: center;
+  
 }
 
 #myUL li a {
@@ -81,6 +83,7 @@ font-size: 8vw;
   background-color: #1e677c;
   margin-bottom: 20px;
   width: 150%;
+  max-width: 420px;
   }
 
 
