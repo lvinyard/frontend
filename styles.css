@@ -216,10 +216,6 @@ hr {
     width:100%;
     margin: 0 auto;
   }
-  .emoji{
-    display: none;
-    
-    }
 
     .blink_me {
       animation: blinker 2s linear infinite;
