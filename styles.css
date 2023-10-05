@@ -83,8 +83,17 @@ font-size: 8vw;
   margin-bottom: 20px;
   width: 150%;
   max-width: 420px;
+  transition:.3s;
   }
 
+  .card .read-more:hover{
+    font-size: 14px;
+}
+
+.card:hover{
+    box-shadow: 8px 8px 8px rgb(119, 119, 122);
+    transform:scale(1.01);
+}
 
 #left {
     width: 35%;
@@ -156,6 +165,7 @@ hr {
 .form-check-label{
   margin-right: 0;
 }
+
 
 #loader-container {
   position: relative;

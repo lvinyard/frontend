@@ -138,6 +138,7 @@ function loadCards(data, familySwitch){
         <h4 class="card-title" style="color: white;">${result.movieId}</h4>
         <hr/>
         <p class="card-text">${result.metadata.overview}</p>
+        <a target="_blank" href="https://www.themoviedb.org/movie/${result.metadata.id}" class="stretched-link"></a>
   </div>
 </div>
 </div>
