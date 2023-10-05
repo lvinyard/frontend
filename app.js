@@ -108,8 +108,13 @@ function movieSelect(event) {
         loaders.style.display = "none";
     })
     .catch(error => {
-        // handle the error
-        console.log(error)
+
+      var loaders = document.getElementById("loader-container");
+      loaders.style.display = "none";
+
+      window.alert("There was an error fetching movies");
+      console.log(error)
+      
     });
 
 }
