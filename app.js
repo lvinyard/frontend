@@ -37,7 +37,7 @@ function myFunction() {
   if(filter.length == 0){
     ul.style["visibility"] = "hidden";
     //document.getElementById("movieRecommendations").innerHTML = "";
-    document.getElementById("card-deck").innerHTML = "";
+    document.getElementById("testlucas").innerHTML = "";
     console.log(filter.length);
   }
   else{
@@ -73,11 +73,20 @@ function movieSelect(event) {
 
     var selectMovie = event.target.innerHTML;
     selectMovie = selectMovie.replace(/&amp;/g,'&');
-    var url = "https://movierec.lukesnexus.com/" + selectMovie
-    var movieList = document.getElementById("movieRecommendations");
+    var familySwitch = document.querySelector("#flexSwitchCheck").checked;
+    console.log(familySwitch);
 
+    if(familySwitch){
+      var url = "https://movierec.lukesnexus.com/ff/" + selectMovie
+    }else{
+      var url = "https://movierec.lukesnexus.com/" + selectMovie
+    }
 
-    document.getElementById("card-deck").innerHTML = "";
+    
+    //var movieList = document.getElementById("movieRecommendations");
+
+  
+    document.getElementById("testlucas").innerHTML = "";
     myFunction()
 
     ul = document.getElementById("myUL");
@@ -94,17 +103,8 @@ function movieSelect(event) {
     .then(data => {
         console.log(data);
 
-        loadCards(data);
+        loadCards(data,familySwitch);
 
-        /*
-        for (var movie of data){
-
-            console.log(movie.movieId);
-            var li = document.createElement('li');
-            li.appendChild(document.createTextNode(movie.movieId));
-            movieList.appendChild(li);
-        }
-        */
         loaders.style.display = "none";
     })
     .catch(error => {
@@ -114,17 +114,19 @@ function movieSelect(event) {
 
 }
 
-function loadCards(data){
+function loadCards(data, familySwitch){
 
-  const container = document.getElementById('card-deck');
-  let cardArray = [];
+  const container = document.getElementById('testlucas');
 
   data.forEach((result, idx) => {
-    // Create card element
-    const card = document.createElement('div');
-    card.classList = 'card-body';
+    console.log(result.metadata.genre_ids);
+    if(familySwitch && !(result.metadata.genre_ids.includes(10751))){
+      console.log("skip");
+      return;
+    }
 
     content = `
+    <div class="col d-flex">
     <div class="card">
       <img class="card-img-top" src="https://image.tmdb.org/t/p/original/${result.metadata.poster_path}" alt="Card image">
       <div class="card-body"">
@@ -133,47 +135,17 @@ function loadCards(data){
         <p class="card-text">${result.metadata.overview}</p>
   </div>
 </div>
+</div>
     `;
-    // add contant to array
-    cardArray.push(content);
+
+    // add card to div
+    container.innerHTML = container.innerHTML + content
   })
 
-  const cardDeck = `
-  <div class="row">
-  <div class="col d-flex">
-    ${cardArray[0]}
-  </div>
-  <div class="col d-flex">
-  ${cardArray[1]}
-  </div>
-  <div class="col d-flex">
-  ${cardArray[2]}
-  </div>
-<!--</div>
-<div class="row"> -->
-  <div class="col d-flex">
-  ${cardArray[3]}
-  </div>
-  <div class="col d-flex">
-  ${cardArray[4]}
-  </div>
-  <div class="col d-flex">
-  ${cardArray[5]}
-  </div>
-<!-- </div>
-<div class="row"> -->
-  <div class="col d-flex">
-  ${cardArray[6]}
-  </div>
-  <div class="col d-flex">
-  ${cardArray[7]}
-  </div>
-  <div class="col d-flex">
-  ${cardArray[8]}
-  </div>
-</div>
-  `;
+  cont2 = document.getElementById('testlucas');
 
-  container.innerHTML += cardDeck;
+  if(!(cont2.innerHTML.includes('<div'))){
+    window.alert("There are no Family Friendly results for this movie.");
+  }
 }
 

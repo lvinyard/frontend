@@ -24,27 +24,30 @@
       <span class="header">Welcome to my Movie Recommender Site</span>
       <span _ngcontent-ng-c215015321="" class="emoji" style="margin-left:.25em;">🎬</span>
     </h1>
-    <p style="color:#c57f23; font-size: 2vw;">Personalized movies based on Collaborative and Content-Based Filtering!</p> 
+    <p style="color:#c57f23; font-size: 2vw;">Personalized movies based on Collaborative Filtering!</p> 
   </div>
 
   <div id="left">
     <div class="search-container">
       <input class="center-block" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for movies..">
       <button id="clearButton" class="btn btn-secondary">Clear</button>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="flexSwitchCheck" checked>
+        <label class="form-check-label" for="flexSwitchCheckChecked">Family Friendly</label>
+      </div>
     </div>
     <ul id="myUL" class="myUL" style="visibility: hidden;"></ul>
   </div>
   
-  
-  
-
 
   <div id="right">
-    <div style="display: none;" id="loader-container" class="center-block">
+    <div style="display: none;" id="loader-container" >
       <div id="loader" class="loader"></div>
       <div class="blink_me">Choosing the best movies for you...</div>
     </div>
     <div class="container center-block" id="card-deck">
+      <div class="row" id="testlucas">
+      </div>
     </div>
     <div style="min-height: 15vw;"></div>
   </div>
