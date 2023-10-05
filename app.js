@@ -65,7 +65,7 @@ var clearButton = document.getElementById("clearButton");
 clearButton.addEventListener("click", function() {
   // Clear the input field
   input.value = "";
-  // Call your search function (myFunction in this case) to reset the search results
+
   myFunction();
 });
 

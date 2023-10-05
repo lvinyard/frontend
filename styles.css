@@ -1,11 +1,11 @@
 #myInput {
-  background-repeat: no-repeat; /* Do not repeat the icon image */
-  width: 70%; /* Full-width */
+  background-repeat: no-repeat; 
+  width: 70%; 
   border: 10px solid rgb(7, 7, 7);
-  font-size: 16px; /* Increase font-size */
-  padding: 2px 20px 12px 40px; /* Add some padding */
-  border: 1px solid #ddd; /* Add a grey border */
-  margin-bottom: 12px; /* Add some space below the input */
+  font-size: 16px; 
+  padding: 2px 20px 12px 40px; 
+  border: 1px solid #ddd; 
+  margin-bottom: 12px; 
   margin-top: 40px;
   text-align: left;
   margin-left: 40px;
@@ -59,20 +59,20 @@ font-size: 8vw;
 }
 
 #myUL li a {
-  border: 1px solid #ddd; /* Add a border to all links */
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6; /* Grey background color */
-  padding: 12px; /* Add some padding */
-  text-decoration: none; /* Remove default text underline */
-  font-size: 18px; /* Increase the font-size */
-  color: black; /* Add a black text color */
-  display: block; /* Make it into a block element to fill the whole list */
+  border: 1px solid #ddd; 
+  margin-top: -1px; 
+  background-color: #f6f6f6; 
+  padding: 12px; 
+  text-decoration: none; 
+  font-size: 18px; 
+  color: black; 
+  display: block;
   position: relative;
   z-index: 1;
 }
 
 #myUL li a:hover:not(.header) {
-  background-color: #eee; /* Add a hover effect to all links, except for headers */
+  background-color: #eee; 
   position: relative;
   z-index: 1;
 }
@@ -110,8 +110,8 @@ font-size: 8vw;
 hr {
   height: 3px;
   /* Set the hr color */
-  color: #c57f23;  /* old IE */
-  background-color: #c57f23;  /* Modern Browsers */
+  color: #c57f23; 
+  background-color: #c57f23;
   border-color: #c57f23;
 }
 
@@ -121,13 +121,11 @@ hr {
   max-width: 1000px !important;
 }
 
-/* Add CSS to style the search container */
 .search-container {
-  display: flex; /* Use flexbox to arrange items horizontally */
-  align-items: center; /* Center vertically within the container */
+  display: flex; 
+  align-items: center; 
 }
 
-/* Style the clear button as needed */
 #clearButton {
   margin-left: 1px; 
   margin-right: 15px; 
